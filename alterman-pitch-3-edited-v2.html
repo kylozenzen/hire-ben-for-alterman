@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ben Campbell × Alterman — Marketing Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080705;
+  --ink2:#0d0c0a;
+  --ink3:#161411;
+  --paper:#efe7d3;
+  --muted:rgba(239,231,211,.57);
+  --faint:rgba(239,231,211,.25);
+  --rule:rgba(239,231,211,.09);
+  --rule2:rgba(239,231,211,.19);
+  --cu:#a85318;
+  --cu2:#c46c30;
+  --glow:rgba(168,83,24,.13);
+  --glow2:rgba(168,83,24,.22);
+  --serif:'Fraunces',Georgia,serif;
+  --body:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono',monospace;
+  --max:1120px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);background:var(--ink);color:var(--paper);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:998;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");opacity:.026;mix-blend-mode:overlay;}
+.w{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:400;height:56px;background:rgba(8,7,5,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:box-shadow .3s;}
+.nav.up{box-shadow:0 4px 40px rgba(0,0,0,.6);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:var(--max);margin:0 auto;padding:0 28px;gap:16px;}
+.nav-logo{font-family:var(--serif);font-style:italic;font-weight:400;font-size:15px;letter-spacing:-.02em;color:var(--paper);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-logo b{color:var(--cu);font-style:normal;font-weight:600;}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links a{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);text-decoration:none;padding:5px 9px;border-radius:3px;white-space:nowrap;transition:color .18s,background .18s;}
+.nav-links a:hover,.nav-links a.on{color:var(--cu2);background:var(--glow);}
+.nav-r{display:flex;gap:8px;flex-shrink:0;}
+.nb{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.15em;padding:6px 12px;text-decoration:none;border-radius:2px;white-space:nowrap;transition:background .18s,transform .18s;}
+.nb.o{color:var(--muted);border:1px solid var(--rule2);}
+.nb.o:hover{color:var(--paper);}
+.nb.s{background:var(--cu);color:#fff;}
+.nb.s:hover{background:var(--cu2);transform:translateY(-1px);}
+@media(max-width:840px){.nav-links{display:none;}.nb.o{display:none;}}
+
+/* HERO */
+.hero{position:relative;min-height:95vh;padding-top:56px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('alterman-hero.jpg');background-size:cover;background-position:center 38%;animation:kb 22s ease-out both;}
+@keyframes kb{from{transform:scale(1.07);}to{transform:scale(1.0);}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(168deg,rgba(8,7,5,.36) 0%,rgba(8,7,5,.60) 36%,rgba(8,7,5,.97) 100%);}
+.hero-req{position:absolute;top:72px;right:28px;z-index:2;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.22em;color:var(--cu2);border:1px solid rgba(168,83,24,.36);background:rgba(168,83,24,.1);padding:7px 13px;}
+.hero-body{position:relative;z-index:2;padding-bottom:88px;}
+.hero-body .w{display:grid;grid-template-columns:1.3fr 1fr;gap:72px;align-items:end;}
+.h-ey{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.26em;color:var(--cu2);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.h-ey::before{content:"";width:18px;height:1px;background:var(--cu);}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.2rem,7.4vw,6.8rem);line-height:.91;letter-spacing:-.044em;margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--cu2);}
+.h-sub{font-family:var(--serif);font-weight:300;font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.65;color:var(--muted);max-width:44ch;}
+.h-sub strong{color:var(--paper);font-weight:400;}
+.h-card{border-left:1px solid var(--rule2);padding-left:34px;}
+.h-card-lbl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.24em;color:var(--cu);margin-bottom:14px;}
+.h-rows{list-style:none;}
+.h-rows li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dashed var(--rule);font-size:12.5px;}
+.h-rows li:last-child{border-bottom:none;}
+.h-rows .lk{color:var(--muted);}
+.h-rows .lv{color:var(--paper);font-weight:500;text-align:right;}
+@media(max-width:740px){.hero{min-height:100svh;}.hero-body .w{grid-template-columns:1fr;gap:28px;}.h-card{border-left:none;padding-left:0;border-top:1px solid var(--rule2);padding-top:24px;}}
+
+/* SECTION CHROME */
+.sec{padding:100px 0;border-bottom:1px solid var(--rule);}
+@media(max-width:740px){.sec{padding:64px 0;}}
+.sec-ey{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.28em;color:var(--cu);display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sec-ey::before{content:"";width:16px;height:1px;background:var(--cu);}
+.sec-h{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,5.4vw,4.8rem);line-height:.93;letter-spacing:-.038em;margin-bottom:10px;}
+.sec-h em{font-style:italic;color:var(--cu2);}
+.sec-sub{font-size:15px;color:var(--muted);line-height:1.72;max-width:58ch;margin-top:16px;}
+
+/* EXPAND PILL */
+.xpill{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--cu);border:1px solid rgba(168,83,24,.3);background:var(--glow);padding:3px 9px;border-radius:99px;flex-shrink:0;pointer-events:none;transition:background .2s;}
+.xpill svg{transition:transform .35s var(--ease);}
+.open .xpill svg{transform:rotate(180deg);}
+.open .xpill{background:var(--glow2);}
+
+/* ── SEC 1: THE OPPORTUNITY ─────────────── */
+.opp-quote{
+  font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(1.6rem,3vw,2.5rem);
+  line-height:1.22;letter-spacing:-.025em;
+  max-width:28ch;margin:48px 0 56px;
+  padding-left:36px;position:relative;
+}
+.opp-quote::before{content:"";position:absolute;left:0;top:.5em;width:20px;height:2px;background:var(--cu);}
+.opp-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule2);border:1px solid var(--rule2);}
+.opp-col{background:var(--ink2);padding:40px 34px;}
+.opp-col.has{background:linear-gradient(180deg,rgba(168,83,24,.06),rgba(13,12,10,1) 22%);}
+.opp-col.gap{background:linear-gradient(180deg,rgba(168,83,24,.12),rgba(13,12,10,1) 26%);box-shadow:inset 0 0 0 1px rgba(168,83,24,.14);}
+.opp-col-tag{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.2em;padding:4px 10px;border-radius:2px;display:inline-block;margin-bottom:18px;}
+.opp-col.has .opp-col-tag{color:var(--cu2);border:1px solid rgba(168,83,24,.38);background:var(--glow);}
+.opp-col.gap .opp-col-tag{color:var(--paper);border:1px solid rgba(239,231,211,.16);background:rgba(255,255,255,.02);}
+.opp-col h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:18px;}
+.opp-list{list-style:none;}
+.opp-list li{padding:12px 0;border-bottom:1px dashed var(--rule);font-size:13.5px;color:var(--muted);line-height:1.55;display:flex;gap:10px;}
+.opp-list li:last-child{border-bottom:none;}
+.opp-list li::before{font-family:var(--mono);flex-shrink:0;}
+.opp-col.has .opp-list li::before{content:"—";color:var(--cu);}
+.opp-col.gap .opp-list li::before{content:"—";color:var(--cu2);}
+.opp-list li strong{color:var(--paper);font-weight:500;}
+.opp-callout{margin-top:22px;padding:16px 18px;border:1px solid rgba(168,83,24,.22);background:rgba(168,83,24,.08);}
+.opp-callout .ey{display:block;font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--cu);margin-bottom:8px;}
+.opp-callout b{font-family:var(--serif);font-weight:400;font-size:1.15rem;letter-spacing:-.02em;color:var(--paper);}
+.opp-callout p{margin-top:6px;font-size:12.5px;color:var(--muted);line-height:1.55;}
+.opp-mini-link{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:var(--cu2);text-decoration:none;border-bottom:1px solid var(--cu);padding-bottom:2px;}
+.opp-mini-link:hover{color:var(--paper);}
+.opp-stat{margin-top:48px;padding:32px 36px;border:1px solid var(--cu);background:var(--glow);display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;}
+.opp-stat-n{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,5.5vw,5rem);line-height:1;letter-spacing:-.04em;color:var(--cu2);}
+.opp-stat-p{font-family:var(--serif);font-weight:300;font-size:clamp(1rem,1.55vw,1.28rem);line-height:1.55;letter-spacing:-.01em;max-width:52ch;}
+.opp-stat-p strong{font-style:italic;color:var(--cu2);font-weight:400;}
+@media(max-width:700px){.opp-split{grid-template-columns:1fr;}.opp-col{padding:28px 22px;}.opp-stat{grid-template-columns:1fr;gap:16px;padding:26px 22px;}}
+
+/* ── SEC 2: OVERLAND PROOF ──────────────── */
+.ol-block{border:1px solid var(--cu);background:var(--glow);padding:52px 44px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;}
+.ol-ey{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.22em;color:var(--cu);margin-bottom:14px;}
+.ol-h{font-family:var(--serif);font-weight:300;font-size:clamp(1.65rem,2.8vw,2.4rem);line-height:1.1;letter-spacing:-.025em;margin-bottom:18px;}
+.ol-h em{font-style:italic;color:var(--cu2);}
+.ol-p{font-size:14.5px;color:var(--paper);line-height:1.72;margin-bottom:12px;}
+.ol-p strong{color:var(--cu2);font-weight:500;}
+.ol-link{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--cu);text-decoration:none;border-bottom:1px solid var(--cu);padding-bottom:2px;display:inline-block;margin-top:8px;}
+.ol-link:hover{color:var(--cu2);}
+.ol-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule2);border:1px solid var(--rule2);}
+.ol-stat{background:var(--ink);padding:26px 20px;display:flex;flex-direction:column;gap:7px;}
+.ol-num{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1;letter-spacing:-.03em;color:var(--cu2);}
+.ol-what{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);}
+.ol-also{margin-top:20px;padding-top:20px;border-top:1px dashed var(--rule2);}
+.ol-also-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:var(--cu);margin-bottom:12px;}
+.ol-also-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.ol-also-list li{font-size:12.5px;color:var(--muted);display:flex;gap:8px;line-height:1.5;}
+.ol-also-list li::before{content:"→";color:var(--cu);font-family:var(--mono);flex-shrink:0;}
+@media(max-width:740px){.ol-block{grid-template-columns:1fr;padding:28px 22px;gap:32px;}}
+
+/* ── SEC 3: THE PLAN ────────────────────── */
+.pillars{border:1px solid var(--rule2);}
+.pil-item{border-bottom:1px solid var(--rule);}
+.pil-item:last-child{border-bottom:none;}
+.pil-btn{width:100%;background:none;border:none;color:var(--paper);cursor:pointer;text-align:left;display:flex;align-items:center;gap:14px;padding:22px 26px;transition:background .22s;}
+.pil-btn:hover,.pil-item.open .pil-btn{background:var(--ink2);}
+.pil-n{font-family:var(--serif);font-weight:300;font-size:1.75rem;color:var(--cu);line-height:1;min-width:40px;}
+.pil-ico{width:38px;height:38px;border-radius:7px;background:var(--glow);border:1px solid rgba(168,83,24,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cu2);}
+.pil-txt{flex:1;min-width:0;}
+.pil-title{font-family:var(--serif);font-weight:400;font-size:clamp(1rem,1.65vw,1.32rem);letter-spacing:-.02em;line-height:1.2;margin-bottom:3px;}
+.pil-title em{font-style:italic;color:var(--cu2);}
+.pil-sub{font-size:12px;color:var(--muted);}
+.pil-pct{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:var(--cu);border:1px solid rgba(168,83,24,.26);padding:4px 9px;white-space:nowrap;flex-shrink:0;}
+.pil-body{max-height:0;overflow:hidden;transition:max-height .55s var(--ease);}
+.pil-body-in{border-top:1px dashed var(--rule);padding:26px 26px 30px;}
+.pil-intro{font-size:14.5px;color:var(--muted);line-height:1.74;margin-bottom:22px;max-width:64ch;}
+.pil-intro strong{color:var(--paper);font-weight:500;}
+.tacs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+.tac{background:var(--ink3);border-left:2px solid var(--cu);padding:13px 15px;}
+.tac-n{font-size:13px;font-weight:500;color:var(--paper);margin-bottom:5px;}
+.tac-d{font-size:12.5px;color:var(--muted);line-height:1.54;}
+@media(max-width:640px){.tacs{grid-template-columns:1fr;}.pil-btn{padding:18px;gap:10px;}.pil-pct{display:none;}}
+
+/* ── SEC 4: FIRST 90 ────────────────────── */
+.phases{position:relative;}
+.phases::before{content:"";position:absolute;left:148px;top:0;bottom:0;width:1px;background:var(--rule2);}
+.ph-row{display:grid;grid-template-columns:148px 1fr;border-bottom:1px solid var(--rule);}
+.ph-row:last-child{border-bottom:none;}
+.ph-aside{padding:26px 26px 26px 0;position:relative;}
+.ph-aside::after{content:"";position:absolute;right:-5px;top:34px;width:10px;height:10px;border-radius:50%;background:var(--cu);border:2px solid var(--ink);box-shadow:0 0 0 2px var(--cu);}
+.ph-days{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:var(--cu);margin-bottom:7px;}
+.ph-name{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.1rem;letter-spacing:-.02em;line-height:1.15;}
+.ph-main{padding:26px 0 26px 38px;}
+.ph-sum{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;}
+.ph-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:var(--cu);padding:0;transition:color .18s;}
+.ph-btn:hover{color:var(--cu2);}
+.ph-exp{max-height:0;overflow:hidden;transition:max-height .45s var(--ease);}
+.ph-tasks{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:16px;}
+.ph-tasks li{background:var(--ink2);border-left:2px solid var(--cu);padding:10px 13px;font-size:13px;color:var(--paper);line-height:1.5;}
+@media(max-width:640px){.phases::before{display:none;}.ph-row{grid-template-columns:1fr;}.ph-aside{padding:20px 0 0;}.ph-aside::after{display:none;}.ph-main{padding:12px 0 20px;}.ph-tasks{grid-template-columns:1fr;}}
+
+/* ── SEC 5: CAMPAIGNS ───────────────────── */
+.camp-note{font-family:var(--serif);font-style:italic;font-size:clamp(.95rem,1.35vw,1.12rem);line-height:1.65;color:var(--muted);max-width:58ch;margin-bottom:36px;padding-left:22px;border-left:2px solid var(--cu);}
+.camps{border:1px solid var(--rule2);}
+.camp-item{border-bottom:1px solid var(--rule);}
+.camp-item:last-child{border-bottom:none;}
+.camp-btn{width:100%;background:none;border:none;color:var(--paper);cursor:pointer;text-align:left;display:flex;align-items:center;gap:14px;padding:20px 26px;transition:background .22s;}
+.camp-btn:hover,.camp-item.open .camp-btn{background:var(--ink2);}
+.camp-n{font-family:var(--serif);font-weight:300;font-size:1.65rem;color:var(--cu);line-height:1;min-width:36px;}
+.camp-ico{width:36px;height:36px;border-radius:7px;background:var(--glow);border:1px solid rgba(168,83,24,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cu2);}
+.camp-hd{flex:1;min-width:0;}
+.camp-title{font-family:var(--serif);font-weight:400;font-size:clamp(.98rem,1.55vw,1.22rem);letter-spacing:-.02em;margin-bottom:2px;}
+.camp-title em{font-style:italic;color:var(--cu2);}
+.camp-sub2{font-size:11.5px;color:var(--muted);}
+.cbadge{font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.15em;padding:3px 8px;border-radius:2px;white-space:nowrap;flex-shrink:0;}
+.cbadge.std{color:var(--muted);border:1px solid var(--rule2);}
+.cbadge.bold{color:#d4943a;border:1px solid rgba(212,148,58,.38);background:rgba(212,148,58,.08);}
+.camp-body{max-height:0;overflow:hidden;transition:max-height .5s var(--ease);}
+.camp-body-in{border-top:1px dashed var(--rule);padding:22px 26px 26px;display:grid;grid-template-columns:1.1fr .9fr;gap:26px;}
+.camp-desc{font-size:14px;color:var(--muted);line-height:1.72;}
+.camp-desc p{margin-bottom:10px;}
+.camp-desc p:last-child{margin-bottom:0;}
+.camp-desc strong{color:var(--paper);font-weight:500;}
+.camp-meta{border:1px solid var(--rule2);}
+.cmr{display:grid;grid-template-columns:64px 1fr;border-bottom:1px solid var(--rule);}
+.cmr:last-child{border-bottom:none;}
+.cmr .mk{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--cu);padding:10px 12px;border-right:1px solid var(--rule);}
+.cmr .mv{font-size:12.5px;color:var(--paper);padding:10px 12px;line-height:1.5;}
+@media(max-width:640px){.camp-body-in{grid-template-columns:1fr;gap:18px;}.camp-btn{padding:18px;gap:10px;}}
+
+/* ── SEC 6: WEBSITE MOCKUP ──────────────── */
+.site-hold{
+  border:1px solid var(--rule2);padding:80px 40px;
+  text-align:center;position:relative;overflow:hidden;
+  background:var(--ink2);
+}
+.site-hold::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--glow) 0%,transparent 68%);pointer-events:none;}
+.site-ico{width:60px;height:60px;border-radius:50%;background:var(--glow);border:1px solid rgba(168,83,24,.28);display:flex;align-items:center;justify-content:center;color:var(--cu2);margin:0 auto 20px;position:relative;z-index:1;}
+.site-h{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:12px;position:relative;z-index:1;}
+.site-h em{font-style:italic;color:var(--cu2);}
+.site-p{font-size:14.5px;color:var(--muted);max-width:50ch;margin:0 auto 28px;line-height:1.7;position:relative;z-index:1;}
+.site-badge{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.22em;color:var(--cu);border:1px solid rgba(168,83,24,.36);background:var(--glow);padding:9px 20px;display:inline-block;position:relative;z-index:1;}
+.site-bullets{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:28px;position:relative;z-index:1;}
+.site-bullet{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);border:1px solid var(--rule2);padding:5px 12px;border-radius:2px;}
+
+/* ── SEC 7: RESUME MATCH ────────────────── */
+.res-tbl{border:1px solid var(--rule2);overflow:hidden;}
+.res-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);}
+.res-row:last-child{border-bottom:none;}
+.res-row.hd{background:var(--ink2);}
+.res-row>div{padding:14px 20px;font-size:13.5px;line-height:1.6;}
+.res-row>div:first-child{border-right:1px solid var(--rule);color:var(--muted);font-size:13px;}
+.res-row.hd>div{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.22em;color:var(--cu);}
+.res-row>div:last-child{color:var(--paper);}
+.res-row>div:last-child strong{color:var(--cu2);font-weight:500;}
+.rb{display:inline-flex;align-items:center;gap:3px;font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.12em;padding:2px 6px;border-radius:2px;margin-right:5px;margin-bottom:3px;background:rgba(60,160,60,.1);border:1px solid rgba(60,180,60,.24);color:#6dcc6d;}
+@media(max-width:600px){.res-row{grid-template-columns:1fr;}.res-row>div:first-child{border-right:none;border-bottom:1px dashed var(--rule);}}
+
+/* CLOSE */
+.close-sec{padding:120px 0 96px;border-bottom:1px solid var(--rule);}
+.close-ey{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.24em;color:var(--cu);margin-bottom:22px;}
+.close-h{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,5.5vw,5rem);line-height:.93;letter-spacing:-.042em;margin-bottom:32px;max-width:14ch;}
+.close-h em{font-style:italic;color:var(--cu2);}
+.close-p{font-family:var(--serif);font-weight:300;font-size:clamp(1rem,1.45vw,1.2rem);line-height:1.65;color:var(--paper);max-width:56ch;margin-bottom:44px;}
+.btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;text-decoration:none;font-family:var(--body);font-size:14px;font-weight:500;letter-spacing:.01em;transition:transform .2s,background .2s;}
+.btn-p{background:var(--cu);color:#fff;border:1px solid var(--cu);}
+.btn-p:hover{background:var(--cu2);transform:translateY(-2px);}
+.btn-s{background:transparent;color:var(--paper);border:1px solid var(--rule2);}
+.btn-s:hover{border-color:var(--rule2);transform:translateY(-2px);}
+@media(max-width:740px){.close-sec{padding:72px 0;}}
+
+/* FOOTER */
+footer{padding:28px 0;}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--faint);}
+
+/* BACK TO TOP */
+#btt{position:fixed;bottom:24px;right:24px;z-index:200;width:40px;height:40px;border-radius:50%;background:var(--cu);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.45);transition:background .2s,transform .2s;}
+#btt:hover{background:var(--cu2);transform:translateY(-2px);}
+#btt.show{display:flex;}
+
+/* ANIM */
+@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.hero h1,.h-sub,.h-card{animation:up .88s var(--ease) both;}
+.h-sub{animation-delay:.14s;}
+.h-card{animation-delay:.26s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainnav">
+  <div class="nav-in">
+    <a class="nav-logo" href="#">Ben Campbell <b>×</b> Alterman</a>
+    <div class="nav-links">
+      <a href="#opp">The Opportunity</a>
+      <a href="#proof">AEC Proof</a>
+      <a href="#plan">The Plan</a>
+      <a href="#days90">First 90</a>
+      <a href="#campaigns">Campaigns</a>
+      <a href="#resume">Resume Match</a>
+    </div>
+    <div class="nav-r">
+      <a class="nb o" href="https://drive.google.com/file/d/1brTQvb5ZOdq3yUGhY0DbtB00QEz4GBaI/view?usp=sharing" target="_blank" rel="noopener">↓ Resume</a>
+      <a class="nb s" href="mailto:hirebencampbell@gmail.com?subject=Marketing%20Manager%20%E2%80%94%20MARKE001623">Let's Talk</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-req">Re: MARKE001623 — Marketing Manager</div>
+  <div class="hero-body">
+    <div class="w">
+      <div>
+        <div class="h-ey">Prepared April 2026 · Ben Campbell · San Antonio, TX</div>
+        <h1>The work is<br/><em>exceptional.</em><br/>The story<br/>isn't keeping up.</h1>
+        <p class="h-sub">Alterman has been electrifying Texas since 1923. <strong>This brief is what I'd do about the gap — and why I'm the right Marketing Manager to close it.</strong></p>
+      </div>
+      <aside class="h-card">
+        <div class="h-card-lbl">◆ In one breath</div>
+        <ul class="h-rows">
+          <li><span class="lk">Role</span><span class="lv">Marketing Manager</span></li>
+          <li><span class="lk">AEC experience</span><span class="lv">Overland Partners · 18 mo</span></li>
+          <li><span class="lk">Background</span><span class="lv">6+ yrs · multiple verticals</span></li>
+          <li><span class="lk">Social proof</span><span class="lv">6M+ followers grown</span></li>
+          <li><span class="lk">Location</span><span class="lv">San Antonio · on-site ready</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── 01: THE OPPORTUNITY ───────────────── -->
+<section class="sec" id="opp">
+  <div class="w">
+    <div class="sec-ey">01 · The Opportunity</div>
+    <h2 class="sec-h">A world-class firm. An <em>underbuilt</em> story.</h2>
+    <p class="sec-sub">Alterman's work speaks for itself — EC&M Top 50, AGC Safe Specialty Contractor of the Year, a $200M stadium project, employee ownership since 1984. The opportunity isn't to fix what's broken. It's to build a marketing system that finally matches the scale of the work.</p>
+
+    <blockquote class="opp-quote">"The best electrical contractor in Texas shouldn't be the best-kept secret in Texas construction."</blockquote>
+
+    
+<div class="opp-split">
+      <div class="opp-col has">
+        <span class="opp-col-tag">◆ What Alterman has</span>
+        <h3>A century of proof no competitor can match.</h3>
+        <ul class="opp-list">
+          <li><strong>103 years of Texas infrastructure</strong> with landmark work from the Arneson River Theater to DKR Stadium.</li>
+          <li><strong>EC&amp;M Top 50 recognition</strong> and major-project credibility that already belongs in every pursuit conversation.</li>
+          <li><strong>Safety proof that matters,</strong> including AGC Safe Specialty Contractor of the Year.</li>
+          <li><strong>Employee-owned since 1984,</strong> which is one of the strongest recruiting differentiators in the trades.</li>
+          <li><strong>A real talent pipeline,</strong> from Alterman University to the 5-year JATC apprenticeship path.</li>
+        </ul>
+        <div class="opp-callout">
+          <span class="ey">Strongest built-in recruiting edge</span>
+          <b>Employee ownership.</b>
+          <p>Most firms would love to have this story. Alterman already has it — it just needs to be surfaced more clearly and more often.</p>
+        </div>
+      </div>
+      <div class="opp-col gap">
+        <span class="opp-col-tag">◆ What the market currently sees</span>
+        <h3>A brand presence that hasn't kept pace.</h3>
+        <ul class="opp-list">
+          <li><strong>The website reads like a brochure,</strong> not a growth tool — no clear vertical paths, project-story system, or next step.</li>
+          <li><strong>The social footprint feels too small</strong> for a Top 50 firm with this level of project and market presence.</li>
+          <li><strong>No visible case study engine</strong> turning landmark work into content for owners, GCs, recruiting, and BD support.</li>
+          <li><strong>The ESOP story is underused</strong> instead of leading the recruiting conversation where it can actually separate Alterman.</li>
+          <li><strong>No formal advocacy or SEO/AEO system</strong> helping employees and content work harder across markets.</li>
+        </ul>
+        <div class="opp-callout">
+          <span class="ey">Gap made visible</span>
+          <b>~800 Instagram followers.</b>
+          <p>Not a failure — just a clear sign the company story is under-distributed compared to the caliber of the work.</p>
+        </div>
+        <a class="opp-mini-link" href="https://kylozenzen.github.io/alterman-website-project/" target="_blank" rel="noopener">View website redesign concept ↗</a>
+      </div>
+    </div>
+
+    <div class="opp-stat">
+      <div class="opp-stat-n">~800</div>
+      <p class="opp-stat-p">Instagram followers for the firm that lit the Texas Longhorns' stadium. This isn't a failure — it's <strong>unclaimed territory.</strong> The work has been happening for a century. It just needs a Marketing Manager to build the system that makes it travel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 02: OVERLAND PROOF ────────────────── -->
+<section class="sec" id="proof">
+  <div class="w">
+    <div class="sec-ey">02 · AEC Proof</div>
+    <h2 class="sec-h">I've closed this gap before — in the <em>same industry,</em> same city.</h2>
+    <p class="sec-sub">The JD lists AEC experience as preferred. I spent 18 months as Senior Marketing Lead at Overland Partners — a Texas Society of Architects Firm of the Year, headquartered a few miles from Alterman — building the exact kind of storytelling system I'm proposing here.</p>
+
+    <div class="ol-block" style="margin-top:48px;">
+      <div>
+        <div class="ol-ey">◆ Case Study / Oct 2022 – Mar 2024 / Overland Partners</div>
+        <h3 class="ol-h">Senior Marketing Lead, <em>Overland Partners</em></h3>
+        <p class="ol-p">Overland was doing world-class architecture — from the <strong>Cotton Bowl and Marie Selby Botanical Gardens</strong> to <strong>Dude Perfect World, ChildSafe, and the San Antonio Zoo Animal Health Center.</strong> Strong work, not enough people seeing it. Sound familiar?</p>
+        <p class="ol-p">I built the content engine: project storytelling, blogs, press, social, leadership announcements, culture content, recruiting support, and proposal-facing brand credibility. I coordinated cross-team approvals across architects, partners, and clients — the same operating rhythm Alterman needs to turn active projects into steady marketing output.</p>
+        <a class="ol-link" href="https://bencampbell.netlify.app/case-studies/overland-partners" target="_blank" rel="noopener">Read the full case study ↗</a>
+      </div>
+      <div>
+        <div class="ol-stats">
+          <div class="ol-stat"><div class="ol-num">+20%</div><div class="ol-what">Brand Awareness</div></div>
+          <div class="ol-stat"><div class="ol-num">+7%</div><div class="ol-what">New Business Leads</div></div>
+          <div class="ol-stat"><div class="ol-num">+25%</div><div class="ol-what">Engagement Lift</div></div>
+          <div class="ol-stat"><div class="ol-num">+15%</div><div class="ol-what">Website Engagement</div></div>
+        </div>
+        <div class="ol-also">
+          <div class="ol-also-label">◆ What specifically translated</div>
+          <ul class="ol-also-list">
+            <li>Project storytelling system across social, web, and press</li>
+            <li>Cross-team content approvals across partners and clients</li>
+            <li>Proposal and RFQ/RFP brand credibility support</li>
+            <li>Careers page and recruiting content collaboration</li>
+            <li>On-site content shoots — photography and video</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03: THE PLAN ──────────────────────── -->
+<section class="sec" id="plan">
+  <div class="w">
+    <div class="sec-ey">03 · The Plan</div>
+    <h2 class="sec-h">Four pillars. <em>Specific</em> tactics inside each.</h2>
+    <p class="sec-sub">The JD breaks this role into four weighted areas. Expand any pillar to see the named, concrete tactics I'd execute inside it — not theory, not direction, actual work.</p>
+
+    <div class="pillars" style="margin-top:48px;">
+
+      <!-- PILLAR 1 -->
+      <div class="pil-item" id="p1">
+        <button class="pil-btn" onclick="tog('p1','pil')" aria-expanded="false">
+          <span class="pil-n">01</span>
+          <span class="pil-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <span class="pil-txt">
+            <span class="pil-title">Digital Marketing &amp; <em>Campaign Execution</em></span>
+            <span class="pil-sub">Integrated campaigns · SEO/AEO · Web strategy · Paid media · BD support</span>
+          </span>
+          <span class="pil-pct">40% of role</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="pil-body">
+          <div class="pil-body-in">
+            <p class="pil-intro">The biggest lift happens here. The goal is building an integrated system where every project milestone, safety win, and culture moment becomes a traceable, compounding asset — not a one-off post.</p>
+            <div class="tacs">
+              <div class="tac"><div class="tac-n">Vertical SEO Content Hub</div><div class="tac-d">12–16 pillar articles targeting searches like "electrical contractor healthcare Texas" and "BIM-ready electrical subcontractor." Quarterly publishing cadence. Built for Google and answer engines (AEO/GEO).</div></div>
+              <div class="tac"><div class="tac-n">Website Architecture Overhaul</div><div class="tac-d">Restructure around verticals — healthcare, datacenters, stadiums, industrial. Each gets a landing page with project proof, capability overview, and a clear BD inquiry path. Separate careers entry point.</div></div>
+              <div class="tac"><div class="tac-n">LinkedIn Editorial Engine</div><div class="tac-d">Weekly cadence: project milestones Mondays, safety/process Wednesdays, culture spotlights Fridays. Channel-native — not repurposed press releases. Target: 3× organic reach within 6 months.</div></div>
+              <div class="tac"><div class="tac-n">Paid Media with Real Attribution</div><div class="tac-d">UTM-tagged campaigns per vertical and per market. Retargeting for BD audiences. Separate recruiting paid strategy on LinkedIn and trades-specific platforms. Monthly ROAS reporting to leadership.</div></div>
+              <div class="tac"><div class="tac-n">BD Pursuit Asset System</div><div class="tac-d">Templated one-pagers per vertical, pre-populated with project proof and safety metrics. A shared library so every RFQ/RFP response pulls from approved creative — not a scramble the week of submission.</div></div>
+              <div class="tac"><div class="tac-n">Email Marketing Infrastructure</div><div class="tac-d">Quarterly owner/GC newsletter. Separate recruiting drip for candidate pipeline. CRM-connected with open rates, click-through, and conversion tracked and reported monthly.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 2 -->
+      <div class="pil-item" id="p2">
+        <button class="pil-btn" onclick="tog('p2','pil')" aria-expanded="false">
+          <span class="pil-n">02</span>
+          <span class="pil-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="pil-txt">
+            <span class="pil-title">Creative Brand <em>Leadership</em></span>
+            <span class="pil-sub">Brand standards · Photography · Video direction · Collateral · On-site production</span>
+          </span>
+          <span class="pil-pct">20% of role</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="pil-body">
+          <div class="pil-body-in">
+            <p class="pil-intro">"Wired For Excellence" is a strong platform — it just needs a <strong>consistent visual system built around it.</strong> I'd partner with the Marketing Director to evolve brand direction, then enforce standards across every deliverable. I bring a full in-house production kit so on-site storytelling doesn't wait on outside vendors.</p>
+            <div class="tacs">
+              <div class="tac"><div class="tac-n">Living Brand Standards Document</div><div class="tac-d">Typography, photography style, color usage, tone of voice, and social templates. Updated quarterly. Shared with every vendor and new hire — not a PDF that lives on a shelf.</div></div>
+              <div class="tac"><div class="tac-n">On-Site Visual Production Pipeline</div><div class="tac-d">Scheduled quarterly jobsite visits across active markets. Photography and short-form video per visit. Build a reusable asset library so the team is never pulling from the same 12 photos.</div></div>
+              <div class="tac"><div class="tac-n">Project Case Study System</div><div class="tac-d">Templated format: challenge, crew, timeline, safety record, result. Three formats per project — longform web, one-page PDF for BD, social-native short. Starting with DKR, Kalahari, NBU.</div></div>
+              <div class="tac"><div class="tac-n">Collateral Template Library</div><div class="tac-d">Pre-approved InDesign templates for proposals, capability statements, and vertical one-pagers. Brand consistency without the team touching every print piece individually.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 3 -->
+      <div class="pil-item" id="p3">
+        <button class="pil-btn" onclick="tog('p3','pil')" aria-expanded="false">
+          <span class="pil-n">03</span>
+          <span class="pil-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="pil-txt">
+            <span class="pil-title">Team <em>Leadership</em> &amp; Operations</span>
+            <span class="pil-sub">Workflows · Coaching · Quality control · Budget input · Recruiting</span>
+          </span>
+          <span class="pil-pct">30% of role</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="pil-body">
+          <div class="pil-body-in">
+            <p class="pil-intro">30% of this role is people — and that shows up in the JD. I'd invest in <strong>workflow clarity first</strong>, because most team dysfunction comes from unclear intake and undefined priorities, not from talent. This is the operating rhythm I built at Overland across architects, partners, and clients.</p>
+            <div class="tacs">
+              <div class="tac"><div class="tac-n">Marketing Intake System</div><div class="tac-d">Single intake form and triage process for requests from BD, Operations, HR, and Safety. Every request gets a priority tier, an owner, a deadline, and a QC checkpoint. No more reactive fire drills.</div></div>
+              <div class="tac"><div class="tac-n">Weekly 1:1 Coaching Cadence</div><div class="tac-d">Structured 30-minute 1:1s with each direct report. Agenda: blockers, priorities, skill development, feedback. Quarterly development plans tied to individual goals — not just annual reviews.</div></div>
+              <div class="tac"><div class="tac-n">Quality Control Checklist System</div><div class="tac-d">Deliverable-specific QC checklist for each output type — social, press release, proposal collateral, case study, email. Nothing ships without a second set of eyes.</div></div>
+              <div class="tac"><div class="tac-n">Budget Visibility &amp; Input</div><div class="tac-d">Monthly budget tracking shared with the Marketing Director. Spend mapped to campaigns with actual vs. planned variance noted. Input into annual planning based on prior quarter ROI.</div></div>
+              <div class="tac"><div class="tac-n">Employee Advocacy Program</div><div class="tac-d">Structured program with easy-to-share content and branded templates for 10–15 volunteer ambassadors. Starts as a pilot, scales to the broader team. ESOP owners should act like owners.</div></div>
+              <div class="tac"><div class="tac-n">Recruiting &amp; Onboarding Support</div><div class="tac-d">Job descriptions that reflect brand voice, a careers page that converts, and onboarding materials that reinforce Alterman culture from day one. Partner with HR on all of it.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 4 -->
+      <div class="pil-item" id="p4">
+        <button class="pil-btn" onclick="tog('p4','pil')" aria-expanded="false">
+          <span class="pil-n">04</span>
+          <span class="pil-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+          <span class="pil-txt">
+            <span class="pil-title">Performance Analytics <em>&amp; Reporting</em></span>
+            <span class="pil-sub">KPI dashboards · Campaign attribution · SEO tracking · ROI reporting</span>
+          </span>
+          <span class="pil-pct">10% of role</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="pil-body">
+          <div class="pil-body-in">
+            <p class="pil-intro">Marketing at a 500-person firm can't run on vibes. Everything gets measured — and the measurement answers one real question: <strong>where is the next dollar or hour best spent?</strong></p>
+            <div class="tacs">
+              <div class="tac"><div class="tac-n">Quarterly KPI Dashboard</div><div class="tac-d">Web traffic, SEO rankings, social engagement, paid ROAS, email performance, proposal-to-win rate, cost-per-application. Shared with leadership quarterly. Built in Looker Studio.</div></div>
+              <div class="tac"><div class="tac-n">Channel Monthly Reports</div><div class="tac-d">One-page monthly summary per active channel: what we ran, what the numbers were, what changes next month. Written for a non-marketer — leadership shouldn't need a decoder ring.</div></div>
+              <div class="tac"><div class="tac-n">Campaign Attribution Tracking</div><div class="tac-d">Every URL is UTM-tagged. Every BD asset has a source code. Every paid ad is tied to a conversion event. When a pursuit comes in, we know if marketing touched it.</div></div>
+              <div class="tac"><div class="tac-n">Marketing Asset Library</div><div class="tac-d">Tagged, searchable, version-controlled library of every approved asset. Accessible to BD without routing through the marketing team. Updated as deliverables ship.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 04: FIRST 90 DAYS ─────────────────── -->
+<section class="sec" id="days90">
+  <div class="w">
+    <div class="sec-ey">04 · Timeline</div>
+    <h2 class="sec-h">A <em>staged</em> plan, not a manifesto.</h2>
+    <p class="sec-sub">Three phases. The real plan sharpens after the first 30 days of listening. Expand any phase to see the task list inside it.</p>
+
+    <div class="phases" style="margin-top:56px;">
+      <div class="ph-row" id="ph1">
+        <div class="ph-aside"><div class="ph-days">◆ Days 01–30</div><div class="ph-name">Listen &amp; audit</div></div>
+        <div class="ph-main">
+          <p class="ph-sum">Understand the business before touching the marketing. Jobsite visits, stakeholder interviews, full digital audit. No visible output yet — just good intelligence.</p>
+          <button class="ph-btn" onclick="tog('ph1','ph')"><span class="xpill" style="pointer-events:none;">Expand tasks <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="ph-exp"><ul class="ph-tasks">
+            <li>Brand + website + social + SEO audit, quantified</li>
+            <li>Stakeholder interviews: BD, Ops, HR, Safety, Leadership</li>
+            <li>Team 1:1s — strengths, frustrations, workflow pain points</li>
+            <li>Jobsite visits across SATX · ATX · DFW · NM</li>
+            <li>Content inventory — what exists, what's reusable</li>
+            <li>Competitive scan — 5 EC&amp;M Top 50 peer firms</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="ph-row" id="ph2">
+        <div class="ph-aside"><div class="ph-days">◆ Days 31–60</div><div class="ph-name">Quick wins &amp; foundations</div></div>
+        <div class="ph-main">
+          <p class="ph-sum">Ship visible improvements the team and market can feel. Start the long builds that compound slowest — they need the most runway.</p>
+          <button class="ph-btn" onclick="tog('ph2','ph')"><span class="xpill" style="pointer-events:none;">Expand tasks <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="ph-exp"><ul class="ph-tasks">
+            <li>Refreshed LinkedIn + Instagram editorial calendars live</li>
+            <li>First 3 project case studies: DKR, Kalahari, NBU HQ</li>
+            <li>Employee advocacy pilot — 10 to 15 volunteers</li>
+            <li>Website scope + wireframes + vendor selection</li>
+            <li>SEO content hub — first 5 pillar articles in production</li>
+            <li>Pursuit-asset template system delivered to BD</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="ph-row" id="ph3">
+        <div class="ph-aside"><div class="ph-days">◆ Days 61–90</div><div class="ph-name">Build &amp; scale</div></div>
+        <div class="ph-main">
+          <p class="ph-sum">Move from tactical fixes to durable systems. By Q1 end, marketing feels like a compounding operating layer — not a reactive support function.</p>
+          <button class="ph-btn" onclick="tog('ph3','ph')"><span class="xpill" style="pointer-events:none;">Expand tasks <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+          <div class="ph-exp"><ul class="ph-tasks">
+            <li>New site in active production with design sign-off</li>
+            <li>Recurring project storytelling cadence locked</li>
+            <li>Employee advocacy scaled from pilot to program</li>
+            <li>First integrated campaign — "Wired For Excellence" — live</li>
+            <li>Careers site relaunch + recruiting content engine live</li>
+            <li>Quarterly KPI dashboard presented to leadership</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 05: CAMPAIGNS ─────────────────────── -->
+<section class="sec" id="campaigns">
+  <div class="w">
+    <div class="sec-ey">05 · Campaign Ideas</div>
+    <h2 class="sec-h">Five platforms <em>worth exploring.</em></h2>
+    <p class="sec-sub">Starting points — not a finalized plan. The real campaign strategy comes after the first 30 days of listening. The Marketing Director will shape these. Some will fit, some won't, and better ideas will surface. That's how it should work.</p>
+
+    <p class="camp-note" style="margin-top:32px;">Campaigns 4 and 5 are marked as Bold Plays — higher-risk, higher-reward ideas that would set Alterman apart from every competitor. Worth discussing, not required.</p>
+
+    <div class="camps" style="margin-top:8px;">
+
+      <div class="camp-item" id="c1">
+        <button class="camp-btn" onclick="tog('c1','camp')">
+          <span class="camp-n">01</span>
+          <span class="camp-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+          <span class="camp-hd"><span class="camp-title">The <em>Work Behind What Works</em></span><span class="camp-sub2">Prestige brand storytelling · pursuit support</span></span>
+          <span class="cbadge std">Brand / BD</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="camp-body"><div class="camp-body-in">
+          <div class="camp-desc"><p style="font-style:italic;color:var(--cu2);">"You don't see us until you notice everything works."</p><p>A prestige storytelling platform built around Alterman's landmark projects. Longform case study films, editorial photography, quarterly digital roundup. Positions Alterman as <strong>the</strong> Texas electrical contractor — not just one of fifty bidders. Every piece supports BD pursuits without reading like a brochure.</p></div>
+          <div class="camp-meta"><div class="cmr"><div class="mk">WHO</div><div class="mv">Owners, developers, GCs, architects, engineers</div></div><div class="cmr"><div class="mk">WHERE</div><div class="mv">Website, LinkedIn, longform video, trade press</div></div><div class="cmr"><div class="mk">WINS</div><div class="mv">Pursuit win rate, inbound BD, share of voice</div></div></div>
+        </div></div>
+      </div>
+
+      <div class="camp-item" id="c2">
+        <button class="camp-btn" onclick="tog('c2','camp')">
+          <span class="camp-n">02</span>
+          <span class="camp-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <span class="camp-hd"><span class="camp-title"><em>Wired for Excellence</em> — Safety as Advantage</span><span class="camp-sub2">Trust-building · AGC recognition · proposal differentiation</span></span>
+          <span class="cbadge std">Trust / BD</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="camp-body"><div class="camp-body-in">
+          <div class="camp-desc"><p style="font-style:italic;color:var(--cu2);">"Safety isn't a slogan. It's a competitive advantage."</p><p>Build on the existing tagline and AGC recognition to make safety, process, and execution <strong>visually and editorially visible.</strong> Superintendent spotlights. Field safety moments. Data-led thought leadership. Turns a risk line item in a proposal into a differentiating brand argument.</p></div>
+          <div class="camp-meta"><div class="cmr"><div class="mk">WHO</div><div class="mv">Decision-makers, risk managers, facilities directors</div></div><div class="cmr"><div class="mk">WHERE</div><div class="mv">LinkedIn, proposals, speaking, trade PR</div></div><div class="cmr"><div class="mk">WINS</div><div class="mv">Proposal differentiation, thought-leadership reach</div></div></div>
+        </div></div>
+      </div>
+
+      <div class="camp-item" id="c3">
+        <button class="camp-btn" onclick="tog('c3','camp')">
+          <span class="camp-n">03</span>
+          <span class="camp-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="camp-hd"><span class="camp-title">Build Your <em>Future</em> Here</span><span class="camp-sub2">ESOP-led employer brand · trades recruiting</span></span>
+          <span class="cbadge std">Talent</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="camp-body"><div class="camp-body-in">
+          <div class="camp-desc"><p style="font-style:italic;color:var(--cu2);">"Since 1984, we've been owned by the people who build it."</p><p>A recruiting platform that makes <strong>employee ownership the hook</strong> — not buried About page copy. Day-in-the-life videos with electricians and apprentices. The 5-year JATC path told honestly. ESOP explained in plain language. Trades talent is on TikTok and Reels — this campaign lives there.</p></div>
+          <div class="camp-meta"><div class="cmr"><div class="mk">WHO</div><div class="mv">Electricians, apprentices, PMs, BIM/VDC talent</div></div><div class="cmr"><div class="mk">WHERE</div><div class="mv">Instagram, TikTok, YouTube Shorts, careers site</div></div><div class="cmr"><div class="mk">WINS</div><div class="mv">Applications, cost-per-hire, offer acceptance</div></div></div>
+        </div></div>
+      </div>
+
+      <div class="camp-item" id="c4">
+        <button class="camp-btn" onclick="tog('c4','camp')">
+          <span class="camp-n">04</span>
+          <span class="camp-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></span>
+          <span class="camp-hd"><span class="camp-title"><em>Field Notes</em> — Raw from the Jobsite</span><span class="camp-sub2">Anti-polished short-form · trades-authentic · zero-budget reach</span></span>
+          <span class="cbadge bold">Bold Play</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="camp-body"><div class="camp-body-in">
+          <div class="camp-desc"><p style="font-style:italic;color:var(--cu2);">"The most honest content in construction."</p><p>A raw, lo-fi short-form video series shot entirely on-site — no studio, no graphics package. Just <strong>real Alterman crew, real work, real jobsite moments.</strong> A foreman explaining a conduit run. An apprentice finishing their first solo install. Trades audiences have a finely tuned detector for inauthenticity — they trust real over polished every time. Counter-programming to everyone else's brand reels. Wins on Reels and TikTok with zero paid spend.</p></div>
+          <div class="camp-meta"><div class="cmr"><div class="mk">WHO</div><div class="mv">Electricians, apprentices, trades-adjacent</div></div><div class="cmr"><div class="mk">WHERE</div><div class="mv">Instagram Reels, TikTok, YouTube Shorts</div></div><div class="cmr"><div class="mk">WINS</div><div class="mv">Organic reach, recruiter inbound, brand affinity</div></div></div>
+        </div></div>
+      </div>
+
+      <div class="camp-item" id="c5">
+        <button class="camp-btn" onclick="tog('c5','camp')">
+          <span class="camp-n">05</span>
+          <span class="camp-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <span class="camp-hd"><span class="camp-title"><em>100 Years of Current</em></span><span class="camp-sub2">Legacy brand campaign · no competitor can say this</span></span>
+          <span class="cbadge bold">Bold Play</span>
+          <span class="xpill">Expand <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="camp-body"><div class="camp-body-in">
+          <div class="camp-desc"><p style="font-style:italic;color:var(--cu2);">"Every light you've turned on in Texas has our wire in the wall."</p><p>Alterman has the rarest asset in construction marketing: <strong>a 100-year story no competitor can copy.</strong> The Arneson River Theater. HemisFair. WWII air bases. DKR Stadium. Aid the Silent. This campaign makes that history the emotional backbone of the modern brand — through a documentary film, an interactive legacy timeline on the website, a centennial press push, and a social series called "The Wire That Built Texas."</p></div>
+          <div class="camp-meta"><div class="cmr"><div class="mk">WHO</div><div class="mv">Owners, GCs, community, future employees, press</div></div><div class="cmr"><div class="mk">WHERE</div><div class="mv">Documentary film, website, social, local PR, trade media</div></div><div class="cmr"><div class="mk">WINS</div><div class="mv">Brand authority, press coverage, BD positioning</div></div></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 06: RESUME MATCH ──────────────────── -->
+<section class="sec" id="resume">
+  <div class="w">
+    <div class="sec-ey">06 · Resume Match</div>
+    <h2 class="sec-h">Your JD. My resume. <em>Side by side.</em></h2>
+    <p class="sec-sub">Left column is pulled directly from MARKE001623. Right column is from my actual work history — no embellishment.</p>
+
+    <div class="res-tbl" style="margin-top:48px;">
+      <div class="res-row hd">
+        <div>JD Requirement — MARKE001623</div>
+        <div>My Experience</div>
+      </div>
+      <div class="res-row">
+        <div>Bachelor's degree in Marketing, Communications, or related field</div>
+        <div><span class="rb">✓</span>B.A. in Communication — The University of Texas at San Antonio</div>
+      </div>
+      <div class="res-row">
+        <div>5–8 years of progressive marketing experience</div>
+        <div><span class="rb">✓</span>7+ years: Brokerage Engine → Codeup → Overland Partners → San Antonio Zoo. Each role progressively more senior with measurable outcomes.</div>
+      </div>
+      <div class="res-row">
+        <div>AEC industry experience (preferred)</div>
+        <div><span class="rb">✓</span><strong>18 months as Senior Marketing Lead at Overland Partners</strong> — Texas Society of Architects Firm of the Year. Built content engines for project storytelling, BD support, press, and recruiting.</div>
+      </div>
+      <div class="res-row">
+        <div>Experience leading digital campaigns and managing creative production</div>
+        <div><span class="rb">✓</span>Led social-first campaigns for 6M+ follower channels at SA Zoo. Oversaw filming for brand campaigns and on-site storytelling at Overland and the Zoo. Hands-on, not delegated.</div>
+      </div>
+      <div class="res-row">
+        <div>Strong understanding of SEO, paid media, and web performance optimization</div>
+        <div><span class="rb">✓</span>Optimized website content for SEO at Overland (+15% web engagement). Grew Zoo blog 12% through integrated SEO + content strategy. Built email automation at Codeup (+15% sales).</div>
+      </div>
+      <div class="res-row">
+        <div>Strong copywriting and content strategy skills</div>
+        <div><span class="rb">✓</span>Wrote project stories, blogs, thought leadership, and press releases at Overland. Drove 25% engagement lift through audience-informed digital content strategy.</div>
+      </div>
+      <div class="res-row">
+        <div>Proficient in Adobe Creative Suite; video editing preferred</div>
+        <div><span class="rb">✓</span>Adobe Creative Suite in daily workflow. Oversaw filming and video production at SA Zoo, Overland, and Codeup. Full in-house production kit including drone.</div>
+      </div>
+      <div class="res-row">
+        <div>Supports proposal and pursuit efforts</div>
+        <div><span class="rb">✓</span>Directly supported RFQ/RFP work at Overland — increased new business leads 7% through case studies, email, and digital assets designed for BD outcomes.</div>
+      </div>
+      <div class="res-row">
+        <div>Team leadership — supervises, coaches, sets workflows</div>
+        <div><span class="rb">✓</span>Mentored junior marketing team members at Overland. Trained studio staff on marketing initiatives. Led cross-department coordination and content planning at SA Zoo.</div>
+      </div>
+      <div class="res-row">
+        <div>Ability to interpret analytics and translate data into actionable insights</div>
+        <div><span class="rb">✓</span>Used multichannel performance data to define KPIs at SA Zoo. Analytics-driven optimization at Overland (+25% engagement). Grew employer leads 20% at Codeup through targeted digital.</div>
+      </div>
+      <div class="res-row">
+        <div>Outdoor visits to project sites for photography/videography</div>
+        <div><span class="rb">✓</span>Created content directly on-site at SA Zoo and oversaw on-site filming at Overland. This is the part of the job I look forward to most.</div>
+      </div>
+      <div class="res-row">
+        <div>On-site, Live Oak, TX</div>
+        <div><span class="rb">✓</span>San Antonio resident. No relocation. Already embedded in the local AEC and marketing community.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-sec">
+  <div class="w">
+    <div class="close-ey">◆ The Close</div>
+    <h2 class="close-h">Let's make Alterman <em>impossible to ignore.</em></h2>
+    <p class="close-p">This brief is a fraction of the real conversation. I'd value thirty minutes to walk through it, hear where I'm wrong, meet the Marketing Director, and talk about what the first ninety days actually look like inside the existing structure. I also included a website concept link to show how I'd translate the strategy into a stronger front door.</p>
+    <div class="btns">
+      <a href="mailto:hirebencampbell@gmail.com?subject=Marketing%20Manager%20%E2%80%94%20MARKE001623" class="btn btn-p">Start the conversation →</a>
+      <a href="https://drive.google.com/file/d/1brTQvb5ZOdq3yUGhY0DbtB00QEz4GBaI/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-s">↓ Resume</a>
+      <a href="https://bencampbell.netlify.app/case-studies/overland-partners" target="_blank" rel="noopener" class="btn btn-s">Overland case study ↗</a>
+      <a href="https://kylozenzen.github.io/alterman-website-project/" target="_blank" rel="noopener" class="btn btn-s">Website concept ↗</a>
+      <a href="https://bencampbell.netlify.app" target="_blank" rel="noopener" class="btn btn-s">Portfolio ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <div class="foot">
+      <span>◆ Ben Campbell · San Antonio, TX · hirebencampbell@gmail.com · 210-887-5713</span>
+      <span>Re: MARKE001623 · Alterman Marketing Manager · April 2026</span>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+const nav = document.getElementById('mainnav');
+const btt = document.getElementById('btt');
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY;
+  nav.classList.toggle('up', y > 40);
+  btt.classList.toggle('show', y > 500);
+  let cur = '';
+  secs.forEach(s=>{ if(y >= s.offsetTop - 90) cur = s.id; });
+  links.forEach(a=> a.classList.toggle('on', a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+function tog(id, type){
+  const el = document.getElementById(id);
+  const isOpen = el.classList.contains('open');
+
+  if(type==='pil'){
+    document.querySelectorAll('.pil-item').forEach(p=>{
+      p.classList.remove('open');
+      p.querySelector('.pil-body').style.maxHeight='0';
+      p.querySelector('.pil-btn').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      el.classList.add('open');
+      const b = el.querySelector('.pil-body');
+      b.style.maxHeight = b.scrollHeight+'px';
+      el.querySelector('.pil-btn').setAttribute('aria-expanded','true');
+    }
+  } else if(type==='ph'){
+    el.classList.toggle('open',!isOpen);
+    const e = el.querySelector('.ph-exp');
+    e.style.maxHeight = isOpen ? '0' : e.scrollHeight+'px';
+  } else if(type==='camp'){
+    document.querySelectorAll('.camp-item').forEach(c=>{
+      c.classList.remove('open');
+      c.querySelector('.camp-body').style.maxHeight='0';
+    });
+    if(!isOpen){
+      el.classList.add('open');
+      const b = el.querySelector('.camp-body');
+      b.style.maxHeight = b.scrollHeight+'px';
+    }
+  }
+}
+</script>
+</body>
+</html>
